@@ -20,7 +20,7 @@ let wakeup = document.getElementById("wakeup");
 setTimeout(function() {
     decision_overlay.style.display = "flex";
     iphone_character.style.display = "none";
-}, 1000);
+}, 3000);
 
 
 // -------------------------------------
@@ -59,7 +59,7 @@ img_two.addEventListener("click", clicked);
 function clicked(e) {
 
     if (this.classList.contains("snooze")) {
-        
+
         this.classList.remove("snooze");
         background.src = "img/bg_subway.png";
         title.innerHTML = "Oh no! You missed the shuttle and have to take the subway."
@@ -80,7 +80,7 @@ function clicked(e) {
             img_two.classList.remove("wakeup");
             description_two.innerHTML = "Starbucks";
 
-        }, 1000);
+        }, 3000);
 
     } else if (this.classList.contains("wakeup")) {
 
@@ -91,32 +91,70 @@ function clicked(e) {
     } else if (this.classList.contains("cafe")) {
 
     } else if (this.classList.contains("starbucks")) {
-    	decision_overlay.style.display = "none";
-    	this.classList.remove("starbucks");
-    	background.src = "img/bg_SB.png";
-    	title.innerHTML = "You wait for your coffee and head back to the AB.";
-    	
-    	setTimeout(function(){
-    		decision_overlay.style.display = "flex";
-    		background.src = "img/bg_entrance.png";
+        decision_overlay.style.display = "none";
+        this.classList.remove("starbucks");
+        background.src = "img/bg_SB.png";
+        title.innerHTML = "You wait for your coffee and head back to the AB.";
 
-    		img_one.src = "img/study.png";
-            img_one.classList.add("study");
+
+        setTimeout(function() {
+            title.innerHTML = "...what do you do?";
+
+            decision_overlay.style.display = "flex";
+            background.src = "img/bg_entrance.png";
+
+            img_one.src = "img/study.png";
+            img_one.classList.add("class");
             description_one.innerHTML = "Go to class late.";
 
-            img_two.src = "img/coffee.png";
-            img_two.classList.add("lounge");
+            img_two.src = "img/homework.png";
             img_two.classList.remove("starbucks");
+            img_two.classList.add("lounge");
             description_two.innerHTML = "Do homework at the lounge";
 
-    	}, 3000);
+        }, 3000);
 
     } else if (this.classList.contains("class")) {
-    	background.src = "img/bg_class.HEIC";
-    	title.innerHTML = "Class";
+        decision_overlay.style.display = "none";
+        background.src = "img/bg_class.png";
+        title.innerHTML = "Good on you for going to class.";
+
+        setTimeout(function() {
+            title.innerHTML = "Class is over. Where do you go?";
+            decision_overlay.style.display = "flex";
+
+            img_one.src = "img/gym.png";
+            img_one.classList.remove("study");
+            img_one.classList.remove("class");
+            img_one.classList.add("gym");
+            description_one.innerHTML = "Go to the gym";
+
+            img_two.src = "img/snooze.png";
+            img_two.classList.remove("lounge");
+            img_two.classList.add("sleep");
+            description_two.innerHTML = "Take a nap";
+
+        }, 3000);
+    } else if (this.classList.contains("gym")) {
+        decision_overlay.style.display = "none";
+        background.src = "img/bg_treadmill.png";
+        title.innerHTML = "Break that sweat.";
+
+        setTimeout(function() {
+            title.innerHTML = "Good workout! Hungry?";
+            decision_overlay.style.display = "flex";
+
+            img_one.src = "img/cafeteria.png";
+            img_one.classList.remove("gym");
+            img_one.classList.add("cafeteria");
+            description_one.innerHTML = "Eat at the cafeteria.";
+
+            // need eleme button here
+            img_two.src = "img/toast.png";
+            img_two.classList.remove("sleep");
+            img_two.classList.add("eleme");
+            description_two.innerHTML = "Order Eleme!";
+
+        }, 3000);
     }
 }
-
-
-
-
