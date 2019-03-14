@@ -1,22 +1,33 @@
+// core elements
 let decision_overlay = document.getElementById("container_overlay");
-let iphone_character = document.getElementById("iphone");
-
 let description_one = document.getElementById("description_one");
 let description_two = document.getElementById("description_two");
+let decision_one = document.getElementById("decision_one");
+let decision_two = document.getElementById("decision_two");
+let background = document.getElementById("background");
+let title = document.getElementById("title");
 
+// characters
+let iphone_character = document.getElementById("iphone");
 let cafe = document.getElementById("cafe");
 let coffee = document.getElementById("coffee");
+
+// character CTAs
+let snooze = document.getElementById("snooze");
+let wakeup = document.getElementById("wakeup");
+
+// hide character images here so that we only display the relevant ones
 cafe.style.display = "none";
 coffee.style.display = "none";
 
+// first scene lead into decision
 setTimeout(function() {
     decision_overlay.style.display = "flex";
     iphone_character.style.display = "none";
 }, 3000);
 
-let decision_one = document.getElementById("decision_one");
-let decision_two = document.getElementById("decision_two");
 
+// begin event listener code for decisions
 decision_one.addEventListener("mouseenter", mouseEnter);
 decision_two.addEventListener("mouseenter", mouseEnter);
 decision_one.addEventListener("mouseleave", mouseLeave);
@@ -37,12 +48,9 @@ function mouseLeave(e) {
         decision_one_overlay.style.display = "none";
     }
 }
+// end event listener code for decisions
 
-let snooze = document.getElementById("snooze");
-let wakeup = document.getElementById("wakeup");
-let background = document.getElementById("background");
-let title = document.getElementById("title");
-
+// begin event listener code for character CTAs
 snooze.addEventListener("click", clicked);
 wakeup.addEventListener("click", clicked);
 
@@ -69,7 +77,9 @@ function clicked(e) {
     } else if (this == wakeup) {
         
         // change to the path that happens after waking up
-        // don't have shuttle pic yet
+
+        // don't have shuttle pic yet?
         // background.src = "img/bg_shuttle.png"
+
     }
 }
