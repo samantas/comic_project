@@ -5,23 +5,25 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<!-- <div class="container">
-		<span class="title">Good morning. Your alarm just went off! What do you do?</span>
-	</div> -->
 	<div class="container">
 		<div class="scene">
-			<span class="text-overlay">Your alarm just went off!</span>
+			<span class="text-overlay">Your alarm just went off! What do you do?</span>
 			<img src="img/iphone.png" alt="iPhone" id="iphone" class="character">
 			<img src="img/bg_bed.png" alt="bedroom" class="background">
 		</div>
 	</div>
-	<div class="container overlay">
-		<div class="decision">
+	<div class="container overlay" id="container_overlay">
+		<div class="decision" id="decision_one">
+			<div class="decision_overlay" id="decision_one_overlay"></div>
 			<img src="img/pillow.png" class="character cta">
+			<span class="description">Snooze</span>
 		</div>
-		<div class="decision">
+		<div class="decision" id="decision_two">
+			<div class="decision_overlay" id="decision_two_overlay"></div>
 			<img src="img/sun.png" class="character cta">
+			<span class="description">Wake up</span>
 		</div>
 	</div>
+	<script src="js/script.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 </html>

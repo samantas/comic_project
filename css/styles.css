@@ -29,6 +29,7 @@ body {
 }
 
 .decision {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -46,8 +47,22 @@ body {
 }
 
 .decision:hover {
-	background-color: #fff;
 	cursor: pointer;
+}
+
+.decision:hover .character.cta {
+	transform: translate(0,-50%) scale(1.2);
+}
+
+.decision_overlay {
+	position: absolute;
+	display: none;
+	background-color: rgba(0,0,0,0.8);
+	top: 0;
+	left: 0;
+	height: 800px;
+	width: 100%;
+	z-index: 999;
 }
 
 .btn {
@@ -102,9 +117,21 @@ body {
     top: 50%;
     transform: translate(0,-50%);
     display: block;
-    z-index: 999;
+    z-index: 99;
     height: auto;
     width: 200px;
+    transition: .2s ease;
+}
+
+.description {
+	position: absolute;
+    display: block;
+    z-index: 99;
+    font-size: 20px;
+    font-weight: bold;
+    bottom: 40px;
+    color:  #fff;
+    text-shadow: 2px 2px #000;
 }
 
 #iphone {
@@ -122,13 +149,13 @@ body {
 	color: #fff;
 	font-weight: bold;
 	text-shadow: 3px 3px #000;
-
+	z-index: 9999;
 }
 
 .container.overlay {
+	display: none;
 	position: fixed;
 	width: 100%;
 	top: 0;
-	display: flex;
 	z-index: 999;
 }
