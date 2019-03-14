@@ -32,3 +32,19 @@ function mouseLeave(e) {
     }
 
 }
+
+let snooze = document.getElementById("snooze");
+let wakeup = document.getElementById("wakeup");
+
+snooze.addEventListener("click", clicked);
+wakeup.addEventListener("click", clicked);
+
+function clicked(e) {
+	if (this == snooze) {
+		console.log("snooze");
+		// change to the path that happens after snooze
+	} else if (this == wakeup) {
+		console.log("wakeup");
+		// change to the path that happens after waking up
+	}
+}
