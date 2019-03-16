@@ -46,10 +46,13 @@ function listenForCharacterCTAClicks(img_one, img_two) {
     img_one.addEventListener("click", clicked);
     img_two.addEventListener("click", clicked);
 
+    var count = 0;
+
     function clicked() {
 
         if (this.classList.contains("snooze")) {
-
+        	count -= 1;
+        	
             this.classList.remove("snooze");
             background.src = "img/bg_subway.png";
             title.innerHTML = "Oh no! You missed the shuttle and have to take the subway."
@@ -81,6 +84,8 @@ function listenForCharacterCTAClicks(img_one, img_two) {
         } else if (this.classList.contains("cafe")) {
 
         } else if (this.classList.contains("starbucks")) {
+            count -= 1;
+            
             decision_overlay.style.display = "none";
             this.classList.remove("starbucks");
             background.src = "img/bg_SB.png";
@@ -105,6 +110,8 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             }, 3000);
 
         } else if (this.classList.contains("class")) {
+            count += 1;
+
             decision_overlay.style.display = "none";
             background.src = "img/bg_class.png";
             title.innerHTML = "Good on you for going to class.";
@@ -119,13 +126,15 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.add("gym");
                 description_one.innerHTML = "Go to the gym";
 
-                img_two.src = "img/snooze.png";
+                img_two.src = "img/sleep.png";
                 img_two.classList.remove("lounge");
                 img_two.classList.add("sleep");
                 description_two.innerHTML = "Take a nap";
 
             }, 3000);
         } else if (this.classList.contains("gym")) {
+            count += 2;
+
             decision_overlay.style.display = "none";
             background.src = "img/bg_treadmill.png";
             title.innerHTML = "Break that sweat.";
@@ -146,6 +155,41 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 description_two.innerHTML = "Order Eleme!";
 
             }, 3000);
+        } else if (this.classList.contains("cafeteria")) {
+        	count += 1;
+
+			decision_overlay.style.display = "none";
+			background.src = "img/bg_cafeteria.png";
+			title.innerHTML = "Nice! Saving money with an affordable meal.";
+
+			setTimeout(function() {
+                title.innerHTML = "Ah, food coma. Homework in the lounge or home to sleep?";
+                decision_overlay.style.display = "flex";
+
+                img_one.src = "img/homework.png";
+                img_one.classList.remove("cafeteria");
+                img_one.classList.add("lounge");
+                description_one.innerHTML = "Do homework in the lounge.";
+
+                img_two.src = "img/sleep.png";
+                img_two.classList.remove("eleme");
+                img_two.classList.add("home");
+                description_two.innerHTML = "Go home and sleep.";
+
+            }, 3000);
+
+        } else if (this.classList.contains("home")) {
+        	count -= 2;
+
+        	decision_overlay.style.display = "none";
+        	background.src = "img/bg_bed.png";
+			title.innerHTML = "Ah, sweet comfort of home.";
+
+			setTimeout(function() {
+                title.innerHTML = "Based on your decisions, you scored " + count + " points. Better luck next time.";
+                background.style.display = "none";
+            }, 3000);
+
         }
     }
 }
