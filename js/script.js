@@ -16,7 +16,7 @@ let coffee = document.getElementById("coffee");
 let snooze = document.getElementById("snooze");
 let wakeup = document.getElementById("wakeup");
 
-const transitionTimer = 500;
+const transitionTimer = 3000;
 
 function toggleDecisionsOnMouseEnter(decision_one, decision_two) {
 
