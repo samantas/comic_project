@@ -5,23 +5,25 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<!-- <div class="container">
-		<span class="title">Good morning. Your alarm just went off! What do you do?</span>
-	</div> -->
 	<div class="container">
 		<div class="scene">
-			<span class="text-overlay">Your alarm just went off!</span>
-			<img src="img/iphone.png" alt="iPhone" id="iphone" class="character">
-			<img src="img/bg_bed.png" alt="bedroom" class="background">
+			<span class="text-overlay" id="title">Your alarm just went off! What do you do?</span>
+			<img src="img/iphone.png" alt="iPhone" id="iphone" class="character tada">
+			<img src="img/bg_bed.png" alt="bedroom" class="background" id="background">
 		</div>
 	</div>
-	<div class="container overlay">
-		<div class="decision">
-			<img src="img/pillow.png" class="character cta">
+	<div class="container overlay" id="container_overlay">
+		<div class="decision" id="decision_one">
+			<div class="decision_overlay" id="decision_one_overlay"></div>
+			<img src="img/snooze.png" class="character cta snooze" id="img_one">
+			<span class="description" id="description_one">Snooze</span>
 		</div>
-		<div class="decision">
-			<img src="img/sun.png" class="character cta">
+		<div class="decision" id="decision_two">
+			<div class="decision_overlay" id="decision_two_overlay"></div>
+			<img src="img/wakeup.png" class="character cta wakeup" id="img_two">
+			<span class="description" id="description_two">Wake up</span>
 		</div>
 	</div>
+	<script src="js/script.js" type="text/javascript"></script>
 </body>
 </html>
