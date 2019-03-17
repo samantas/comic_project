@@ -390,7 +390,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.add("gym");
                 description_one.innerHTML = "Go to the gym";
 
-                img_two.src = "img/sleep.png";
+                img_two.src = "img/snooze.png";
                 img_two.classList.remove("lounge");
                 img_two.classList.remove("starbucks");
                 img_two.classList.add("sleep");
