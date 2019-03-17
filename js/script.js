@@ -63,7 +63,7 @@ function showResults(count) {
         background.style.display = "none";
 =======
         // background.style.display = "none";
-        background.src = "img/bg_nyushanghai.jpg";
+        background.src = "img/bg_nyushanghai.png";
 
 >>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
     }, transitionTimer);
