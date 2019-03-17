@@ -57,7 +57,7 @@ function showResults(count) {
             title.innerHTML = "Based on your decisions, you scored " + count + " points. Looks like you made some good and some bad decisions.";
         }
         // background.style.display = "none";
-        background.src = "img/bg_nyushanghai.jpg";
+        background.src = "img/bg_nyushanghai.png";
 
     }, transitionTimer);
 }
