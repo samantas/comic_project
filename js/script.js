@@ -1,7 +1,7 @@
-// core elements
-// Bonnie and Sam spit coding through coding separate paths/routes for the storyboard
-// Overlay and other aesthetic codings were also done by Sam.
+// Bonnie (BC) and Sam (SS) spit coding through coding separate paths/routes for the storyboard
+// Overlay and other aesthetic codings were also done by SS
 
+// define core elements
 let decision_overlay = document.getElementById("container_overlay");
 let decision_one_overlay = document.getElementById('decision_one_overlay');
 let decision_two_overlay = document.getElementById('decision_two_overlay');
@@ -21,6 +21,7 @@ let wakeup = document.getElementById("wakeup");
 
 const transitionTimer = 3000;
 
+// SS create function for mouse hover / overlay interaction 
 function toggleDecisionsOnMouseEnter(decision_one, decision_two) {
 
     decision_one.addEventListener("mouseenter", mouseEnter);
@@ -45,12 +46,8 @@ function toggleDecisionsOnMouseEnter(decision_one, decision_two) {
     }
 }
 
+// SS create function to show the final results at the end
 function showResults(count) {
-<<<<<<< HEAD
-=======
-
-
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
     setTimeout(function() {
         if (count > 0) {
             title.innerHTML = "Based on your decisions, you scored " + count + " points. Seems like you were productive!";
@@ -59,16 +56,14 @@ function showResults(count) {
         } else if (count === 0) {
             title.innerHTML = "Based on your decisions, you scored " + count + " points. Looks like you made some good and some bad decisions.";
         }
-<<<<<<< HEAD
-        background.style.display = "none";
-=======
-        // background.style.display = "none";
-        background.src = "img/bg_nyushanghai.png";
 
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
+        background.style.display = "none";
+        background.src = "img/bg_nyushanghai.png";
     }, transitionTimer);
 }
 
+// SS create function to listen for clicks on the characters
+// this is where the decisioning happens
 function listenForCharacterCTAClicks(img_one, img_two) {
 
     img_one.addEventListener("click", clicked);
@@ -104,7 +99,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
 
             }, transitionTimer);
 
-        // Worked on the path/fork in the story where user clicks wake up and onwards (Bonnie)
+        // BC worked on the path/fork in the story where user clicks wake up and onwards
         } else if (this.classList.contains("wakeup")) {
 
             count += 1;
@@ -211,10 +206,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
 
             }, transitionTimer);
 
-<<<<<<< HEAD
-=======
             // Help with troubleshooting different loopholes and wrong story paths (BC)
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
         } else if (this.classList.contains("lateclass")) {
             count += 1;
             console.log(count);
@@ -304,30 +296,20 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             decision_overlay.style.display = "none";
 
             setTimeout(function() {
-<<<<<<< HEAD
                 title.innerHTML = "Now that your tummy is full, Do you want to...";
-=======
-                title.innerHTML = "Now that your tummy is full. Do you want to...";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
                 decision_overlay.style.display = "flex";
 
                 img_one.src = "img/study.gif";
                 img_one.classList.remove("cafeteria");
-
                 img_one.classList.add("lounge");
                 description_one.innerHTML = "Stay at the AB and study";
 
-<<<<<<< HEAD
-                img_two.src = "img/snooze.png";
-=======
                 img_two.src = "img/snooze.gif";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
                 img_two.classList.remove("ordereleme");
                 img_two.classList.add("home");
                 description_two.innerHTML = "Go home!";
 
             }, transitionTimer);
-<<<<<<< HEAD
 
         } else if (this.classList.contains("eatfood")) {
             count += 1;
@@ -337,9 +319,6 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             background.src = "img/bg_cafe.jpg";
             title.innerHTML = "Fill up that tummy!"
             decision_overlay.style.display = "none";
-
-=======
-
         } else if (this.classList.contains("hwlounge")) {
                     count += 1;
                     console.log(count);
@@ -375,7 +354,6 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             title.innerHTML = "Fill up that tummy!"
             decision_overlay.style.display = "none";
 
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
             setTimeout(function() {
                 title.innerHTML = "You just finished eating you food. What should you do?";
                 decision_overlay.style.display = "flex";
@@ -398,11 +376,9 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             console.log(count);
 
             this.classList.remove("nap");
-<<<<<<< HEAD
-            background.src = "img/bg_lounge.png";
-=======
+            // background.src = "img/bg_lounge.png";
             background.src = "img/bg_nap.jpg";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
+
             title.innerHTML = "Its time to catch up on some sleep!"
             decision_overlay.style.display = "none";
 
@@ -465,23 +441,16 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.remove("class");
                 img_one.classList.add("gym");
                 description_one.innerHTML = "Go to the gym";
-
-<<<<<<< HEAD
-                img_two.src = "img/snooze.png";
-=======
+                
+                // img_two.src = "img/snooze.png";
                 img_two.src = "img/nap.gif";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
                 img_two.classList.remove("lounge");
                 img_two.classList.remove("starbucks");
                 img_two.classList.add("sleep");
                 description_two.innerHTML = "Take a nap";
 
             }, transitionTimer);
-<<<<<<< HEAD
-=======
 
-
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
         } else if (this.classList.contains("gym")) {
             count += 2;
             console.log(count);
@@ -499,7 +468,6 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.add("cafeteria");
                 description_one.innerHTML = "Eat at the cafeteria.";
 
-                // need eleme button here
                 img_two.src = "img/eleme.gif";
                 img_two.classList.remove("sleep");
                 img_two.classList.add("ordereleme");
@@ -523,11 +491,9 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.add("lounge");
                 description_one.innerHTML = "Do homework in the lounge.";
 
-<<<<<<< HEAD
-                img_two.src = "img/snooze.png";
-=======
+
+                // img_two.src = "img/snooze.png";
                 img_two.src = "img/snooze.gif";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
                 img_two.classList.remove("ordereleme");
                 img_two.classList.add("home");
                 description_two.innerHTML = "Go home and sleep.";
@@ -554,11 +520,11 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             count -= 2;
             console.log(count);
             this.classList.remove("nap");
-<<<<<<< HEAD
-            background.src = "img/bg_lounge.png";
-=======
+
+            // background.src = "img/bg_lounge.png";
+
             background.src = "img/bg_nap.jpg";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
+
             title.innerHTML = "Its time to catch up on some sleep!"
             decision_overlay.style.display = "none";
 
@@ -566,20 +532,18 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 title.innerHTML = "You just woke up from your nap. Should you...?";
                 decision_overlay.style.display = "flex";
 
-<<<<<<< HEAD
-                img_one.src = "img/homework.png";
-=======
+
+                // img_one.src = "img/homework.png";
+
                 img_one.src = "img/homework.gif";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
+
                 img_one.classList.remove("gym");
                 img_one.classList.add("dohomework");
                 description_one.innerHTML = "Go do Homework";
 
-<<<<<<< HEAD
-                img_two.src = "img/gym.png";
-=======
+
+                // img_two.src = "img/gym.png";
                 img_two.src = "img/gym.gif";
->>>>>>> c858cff3674c1e9865e418eaeaf2d35b5f822114
                 img_two.classList.remove("sleep");
                 img_two.classList.add("workout");
                 description_two.innerHTML = "Go workout";
@@ -600,9 +564,9 @@ function listenForCharacterCTAClicks(img_one, img_two) {
     }
 }
 
+// SS created initialize function
 function init() {
 
-    // first scene lead into decision
     setTimeout(function() {
         decision_overlay.style.display = "flex";
         iphone_character.style.display = "none";
@@ -619,4 +583,5 @@ function init() {
     toggleDecisionsOnMouseEnter(decision_one, decision_two);
 }
 
+// SS listen for when the DOM is loaded, then initialize
 document.addEventListener("DOMContentLoaded", init);
