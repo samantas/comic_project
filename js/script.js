@@ -290,7 +290,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 description_one.innerHTML = "Stay at the AB and study";
 
                 img_two.src = "img/snooze.png";
-                img_two.classList.remove("eleme");
+                img_two.classList.remove("ordereleme");
                 img_two.classList.add("home");
                 description_two.innerHTML = "Go home!";
 
@@ -417,7 +417,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 // need eleme button here
                 img_two.src = "img/eleme.png";
                 img_two.classList.remove("sleep");
-                img_two.classList.add("eleme");
+                img_two.classList.add("ordereleme");
                 description_two.innerHTML = "Order Eleme!";
 
             }, transitionTimer);
@@ -439,7 +439,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 description_one.innerHTML = "Do homework in the lounge.";
 
                 img_two.src = "img/snooze.png";
-                img_two.classList.remove("eleme");
+                img_two.classList.remove("ordereleme");
                 img_two.classList.add("home");
                 description_two.innerHTML = "Go home and sleep.";
 
@@ -454,29 +454,10 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             title.innerHTML = "Always on that study grind!";
 
             setTimeout(function() {
-                title.innerHTML = "Finally done with homework! Hungry?";
-                decision_overlay.style.display = "flex";
-
-                img_one.src = "img/cafeteria.png";
-                img_one.className = "";
-                img_one.className = "character cta cafeteria";
-                description_one.innerHTML = "Eat at the cafeteria.";
-
-                img_two.src = "img/eleme.png";
-                img_two.className = "";
-                img_two.className = "character cta ordereleme";
-                description_two.innerHTML = "Order Eleme!";
-
+                title.innerHTML = "Finally done with homework! Time to go home.";
+                background.style.display = "block";
+                background.src = "img/bg_bed.png";
             }, transitionTimer);
-
-
-        } else if (this.classList.contains("home")) {
-            count -= 2;
-            console.log(count);
-
-            decision_overlay.style.display = "none";
-            background.src = "img/bg_bed.png";
-            title.innerHTML = "Ah, sweet comfort of home.";
 
             showResults(count);
 
@@ -504,7 +485,17 @@ function listenForCharacterCTAClicks(img_one, img_two) {
 
             }, transitionTimer);
 
-        }
+        } else if (this.classList.contains("home")) {
+            count -= 2;
+            console.log(count);
+
+            decision_overlay.style.display = "none";
+            background.src = "img/bg_bed.png";
+            title.innerHTML = "Ah, sweet comfort of home.";
+
+            showResults(count);
+
+        } 
     }
 }
 
