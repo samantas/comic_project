@@ -306,6 +306,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
 
                 img_two.src = "img/snooze.gif";
                 img_two.classList.remove("ordereleme");
+                img_two.classList.remove("hwlounge");
                 img_two.classList.add("home");
                 description_two.innerHTML = "Go home!";
 
