@@ -99,7 +99,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
 
             }, transitionTimer);
 
-        // BC worked on the path/fork in the story where user clicks wake up and onwards
+            // BC worked on the path/fork in the story where user clicks wake up and onwards
         } else if (this.classList.contains("wakeup")) {
 
             count += 1;
@@ -321,29 +321,29 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             title.innerHTML = "Fill up that tummy!"
             decision_overlay.style.display = "none";
         } else if (this.classList.contains("hwlounge")) {
-                    count += 1;
-                    console.log(count);
+            count += 1;
+            console.log(count);
 
-                    this.classList.remove("hwlounge");
-                    background.src = "img/bg_lounge.png";
-                    title.innerHTML = "Get that homework grind on!"
-                    decision_overlay.style.display = "none";
+            this.classList.remove("hwlounge");
+            background.src = "img/bg_lounge.png";
+            title.innerHTML = "Get that homework grind on!"
+            decision_overlay.style.display = "none";
 
-                    setTimeout(function() {
-                        title.innerHTML = "Hm..finally done with homework. Now what?";
-                        decision_overlay.style.display = "flex";
+            setTimeout(function() {
+                title.innerHTML = "Hm..finally done with homework. Now what?";
+                decision_overlay.style.display = "flex";
 
-                        img_one.src = "img/gym.gif";
-                        img_one.classList.remove("lounge");
-                        img_one.classList.add("workout");
-                        description_one.innerHTML = "Go workout!";
+                img_one.src = "img/gym.gif";
+                img_one.classList.remove("lounge");
+                img_one.classList.add("workout");
+                description_one.innerHTML = "Go workout!";
 
-                        img_two.src = "img/eleme.gif";
-                        img_two.classList.remove("home");
-                        img_two.classList.add("ordereleme");
-                        description_two.innerHTML = "Order Eleme!";
+                img_two.src = "img/eleme.gif";
+                img_two.classList.remove("home");
+                img_two.classList.add("ordereleme");
+                description_two.innerHTML = "Order Eleme!";
 
-                    }, transitionTimer);
+            }, transitionTimer);
 
 
         } else if (this.classList.contains("eatfood")) {
@@ -442,7 +442,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.remove("class");
                 img_one.classList.add("gym");
                 description_one.innerHTML = "Go to the gym";
-                
+
                 // img_two.src = "img/snooze.png";
                 img_two.src = "img/nap.gif";
                 img_two.classList.remove("lounge");
@@ -496,6 +496,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 // img_two.src = "img/snooze.png";
                 img_two.src = "img/snooze.gif";
                 img_two.classList.remove("ordereleme");
+                img_two.classList.remove("sleep");
                 img_two.classList.add("home");
                 description_two.innerHTML = "Go home and sleep.";
 
@@ -561,7 +562,7 @@ function listenForCharacterCTAClicks(img_one, img_two) {
 
             showResults(count);
 
-        } 
+        }
     }
 }
 
