@@ -492,8 +492,6 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 img_one.classList.add("lounge");
                 description_one.innerHTML = "Do homework in the lounge.";
 
-
-                // img_two.src = "img/snooze.png";
                 img_two.src = "img/snooze.gif";
                 img_two.classList.remove("ordereleme");
                 img_two.classList.remove("sleep");
@@ -523,8 +521,6 @@ function listenForCharacterCTAClicks(img_one, img_two) {
             console.log(count);
             this.classList.remove("nap");
 
-            // background.src = "img/bg_lounge.png";
-
             background.src = "img/bg_nap.jpg";
 
             title.innerHTML = "Its time to catch up on some sleep!"
@@ -534,17 +530,12 @@ function listenForCharacterCTAClicks(img_one, img_two) {
                 title.innerHTML = "You just woke up from your nap. Should you...?";
                 decision_overlay.style.display = "flex";
 
-
-                // img_one.src = "img/homework.png";
-
                 img_one.src = "img/homework.gif";
 
                 img_one.classList.remove("gym");
                 img_one.classList.add("dohomework");
                 description_one.innerHTML = "Go do Homework";
 
-
-                // img_two.src = "img/gym.png";
                 img_two.src = "img/gym.gif";
                 img_two.classList.remove("sleep");
                 img_two.classList.add("workout");
